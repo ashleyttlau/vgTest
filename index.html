@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Guard - Advanced Threat Protection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            html {
+                font-family: 'Poppins', sans-serif;
+                scroll-behavior: smooth;
+            }
+            .bg-primary {
+                background-color: #000000;
+            }
+            .bg-accent {
+                background-color: #b80000;
+            }
+            .text-accent {
+                color: #b80000;
+            }
+            .border-accent {
+                border-color: #b80000;
+            }
+        }
+        @layer utilities {
+            .hamburger-line {
+                @apply w-6 h-0.5 bg-white block transition-all duration-300;
+            }
+            .mobile-menu {
+                @apply fixed top-0 left-0 w-full h-screen bg-black z-50 flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-opacity duration-300;
+            }
+            .mobile-menu.active {
+                @apply opacity-100 pointer-events-auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-primary text-white sticky top-0 z-40 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <span class="text-2xl font-bold">Vector<span class="text-accent">Guard</span></span>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="hover:text-accent transition-colors">Features</a>
+                <a href="#solutions" class="hover:text-accent transition-colors">Solutions</a>
+                <a href="#pricing" class="hover:text-accent transition-colors">Pricing</a>
+                <a href="#testimonials" class="hover:text-accent transition-colors">Testimonials</a>
+                <a href="#contact" class="bg-accent px-6 py-2 rounded-md hover:bg-red-800 transition-colors">Sign Up</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden flex flex-col space-y-1.5">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">×</button>
+            <a href="#features" class="text-white text-2xl hover:text-accent transition-colors">Features</a>
+            <a href="#solutions" class="text-white text-2xl hover:text-accent transition-colors">Solutions</a>
+            <a href="#pricing" class="text-white text-2xl hover:text-accent transition-colors">Pricing</a>
+            <a href="#testimonials" class="text-white text-2xl hover:text-accent transition-colors">Testimonials</a>
+            <a href="#contact" class="text-white text-2xl bg-accent px-8 py-3 rounded-md hover:bg-red-800 transition-colors">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-primary text-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Advanced Threat Protection for the Modern Enterprise</h1>
+                <p class="text-xl mb-8 text-gray-300">Vector Guard provides cutting-edge security solutions to protect your digital assets from evolving cyber threats.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-accent px-8 py-3 rounded-md hover:bg-red-800 transition-colors">Get Started</a>
+                    <a href="#features" class="border-2 border-white px-8 py-3 rounded-md hover:bg-white hover:text-black transition-colors">Learn More</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="bg-gray-800 rounded-xl p-2 w-full max-w-md h-64 md:h-80 flex items-center justify-center">
+                    <span class="text-gray-400">Security Dashboard Illustration</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Powerful Security Features</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">Our comprehensive suite of tools provides complete protection for your organization</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Real-time Threat Detection</h3>
+                    <p class="text-gray-600">Our AI-powered system continuously monitors for suspicious activity and neutralizes threats before they impact your business.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Endpoint Protection</h3>
+                    <p class="text-gray-600">Secure all devices in your network with our lightweight but powerful endpoint security solution.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-accent rounded-full flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Compliance Management</h3>
+                    <p class="text-gray-600">Automate compliance reporting and ensure you meet industry regulations with our built-in compliance tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Tailored Security Solutions</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">We provide specialized protection for your industry's unique challenges</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Financial Services</h3>
+                    <p class="text-gray-600 mb-4">Protect sensitive financial data and transactions with our banking-grade security solutions designed specifically for the finance industry.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Fraud detection and prevention</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>PCI DSS compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Transaction monitoring</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold mb-3 text-accent">Healthcare</h3>
+                    <p class="text-gray-600 mb-4">Ensure the privacy and security of patient information with solutions built for healthcare providers and organizations.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>HIPAA compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Patient data encryption</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Access control monitoring</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Pricing Plans</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">Choose a plan that fits your organization's needs</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm flex flex-col items-center hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4">Basic</h3>
+                    <div class="text-4xl font-bold mb-4">$49<span class="text-lg font-normal">/mo</span></div>
+                    <ul class="mb-8 space-y-2 text-gray-700">
+                        <li>Real-time Threat Detection</li>
+                        <li>Endpoint Protection</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <a href="#contact" class="bg-accent text-white px-8 py-3 rounded-md mt-auto hover:bg-red-800 transition-colors">Choose Plan</a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-accent flex flex-col items-center scale-105 z-10">
+                    <h3 class="text-xl font-semibold mb-4 text-accent">Pro</h3>
+                    <div class="text-4xl font-bold mb-4">$99<span class="text-lg font-normal">/mo</span></div>
+                    <ul class="mb-8 space-y-2 text-gray-700">
+                        <li>All Basic features</li>
+                        <li>Compliance Management</li>
+                        <li>Advanced Reporting</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#contact" class="bg-accent text-white px-8 py-3 rounded-md mt-auto hover:bg-red-800 transition-colors">Choose Plan</a>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg shadow-sm flex flex-col items-center hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4">Enterprise</h3>
+                    <div class="text-4xl font-bold mb-4">Contact Us</div>
+                    <ul class="mb-8 space-y-2 text-gray-700">
+                        <li>All Pro features</li>
+                        <li>Custom Integrations</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <a href="#contact" class="bg-accent text-white px-8 py-3 rounded-md mt-auto hover:bg-red-800 transition-colors">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">What Our Clients Say</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">Trusted by industry leaders worldwide</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1">
+                        <div>
+                            <div class="font-bold">John D.</div>
+                            <div class="text-gray-500 text-sm">CISO, FinTech Corp</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Vector Guard's real-time threat detection has given us peace of mind. Their support team is outstanding!"</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2">
+                        <div>
+                            <div class="font-bold">Sophia L.</div>
+                            <div class="text-gray-500 text-sm">IT Director, HealthSecure</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"We rely on Vector Guard for compliance management. Their platform is intuitive and effective."</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Client 3">
+                        <div>
+                            <div class="font-bold">Michael B.</div>
+                            <div class="text-gray-500 text-sm">CTO, RetailNext</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Their endpoint protection is top-notch. Setup was fast and the results were immediate."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Get Started with Vector Guard</h2>
+            <p class="text-xl text-center text-gray-300 mb-8 max-w-2xl mx-auto">Ready to secure your organization? Contact us to schedule a demo or discuss your unique requirements.</p>
+            <form class="max-w-xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg space-y-6">
+                <div>
+                    <label class="block mb-2 font-semibold" for="name">Name</label>
+                    <input class="w-full px-4 py-3 rounded-md bg-gray-800 text-white focus:outline-none" type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold" for="email">Email</label>
+                    <input class="w-full px-4 py-3 rounded-md bg-gray-800 text-white focus:outline-none" type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label class="block mb-2 font-semibold" for="message">Message</label>
+                    <textarea class="w-full px-4 py-3 rounded-md bg-gray-800 text-white focus:outline-none" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="bg-accent text-white px-8 py-3 rounded-md hover:bg-red-800 transition-colors">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-6 text-center">
+        &copy; 2025 Vector Guard. All rights reserved.
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Optional: Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (
+                !mobileMenu.contains(e.target) &&
+                !menuButton.contains(e.target) &&
+                mobileMenu.classList.contains('active')
+            ) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
